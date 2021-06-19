@@ -3,11 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "ios:build": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --assets-dest 'ios' --dev=false --platform='ios'",
+    "android:build": "cd android && ./gradlew app:assembleRelease",
+    "pods": "cd ios && pod install && cd ..",
+    "ts:check": "tsc --watch",
+    "ts:check:ci": "tsc",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "test": "jest"
   },
   "dependencies": {
     "react": "17.0.1",
@@ -16,13 +21,15 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
-    "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.64.5",
     "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.14.0",
+    "eslint-plugin-import": "^2.23.4",
     "jest": "^26.6.3",
+    "lint-staged": "^11.0.0",
     "metro-react-native-babel-preset": "^0.64.0",
     "react-test-renderer": "17.0.1",
     "typescript": "^3.8.3"
