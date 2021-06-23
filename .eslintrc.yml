@@ -26,7 +26,7 @@ settings:
 rules:
   no-irregular-whitespace: 'error'
   no-useless-escape: 'error'
-  no-shadow: 'warn'
+  no-shadow: 'off'
   no-restricted-imports:
     [
       'error',
