@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
-import { StyleSheet, TouchableWithoutFeedback } from 'react-native'
+import { StyleSheet } from 'react-native'
 import Animated, {
   interpolate,
   useAnimatedStyle,
   withTiming,
   useSharedValue,
 } from 'react-native-reanimated'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { cardsImgs } from '~/assets'
-import { SafeAreaBox, ImageBox, Flex, Span } from '~/components'
+import { ImageBox, Flex, PressableView, Span } from '~/components'
+import { SCREEN_WIDTH } from '~/constants'
+import { colors } from '~/theme'
 
 export const TransitionsScreen = () => {
+  const { bottom } = useSafeAreaInsets()
   const [toggled, setToggled] = useState(false)
   const transition = useSharedValue(0)
 
@@ -20,16 +24,16 @@ export const TransitionsScreen = () => {
   }
 
   return (
-    <SafeAreaBox flex={1} p={32}>
+    <Flex bg={colors.white}>
       <Flex center>
         {cardsImgs.map((source, index) => {
           return <Card index={index} key={source} source={source} transition={transition} />
         })}
       </Flex>
-      <TouchableWithoutFeedback onPress={switchToggled}>
-        <Span children="start" />
-      </TouchableWithoutFeedback>
-    </SafeAreaBox>
+      <PressableView center bg={colors.iosBlue} pb={24 + bottom} pt={24} onPress={switchToggled}>
+        <Span children="Start" color={colors.white} fontSize={30} type="bold" />
+      </PressableView>
+    </Flex>
   )
 }
 
@@ -41,7 +45,7 @@ const Card = ({ transition, index, source }) => {
 
   return (
     <Animated.View key={source} style={[styles.overlay, rotation]}>
-      <ImageBox height={221} resizeMode="contain" source={source} width="100%" />
+      <ImageBox height={221} resizeMode="contain" source={source} width={SCREEN_WIDTH} />
     </Animated.View>
   )
 }

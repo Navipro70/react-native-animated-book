@@ -9,7 +9,7 @@ import { colors } from '~/theme'
 export const AnimatedButtonsScreen = () => {
   return (
     <Flex bg={colors.white} p={16}>
-      <Row justifyContent="space-evenly">
+      <Row justifyContent="space-evenly" mb={16}>
         <SwitchIconButton
           initialPressed
           activeIcon={<Icons.Secure color={colors.orange} fill={colors.orange} />}

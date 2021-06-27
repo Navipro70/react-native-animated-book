@@ -6,10 +6,10 @@ import Animated, {
   withSequence,
   withTiming,
   withDelay,
-  cancelAnimation,
+  withRepeat,
 } from 'react-native-reanimated'
 
-import { Box, Flex, Span, PressableMenu } from '~/components'
+import { Box, Flex, Span } from '~/components'
 import { SCREEN_WIDTH } from '~/constants'
 import { colors } from '~/theme'
 
@@ -37,10 +37,14 @@ export const AnimatedControllerScreen = () => {
   }))
 
   const onNewAnim = () => {
-    scale.value = withSequence(
-      withDelay(500, withTiming(1)),
-      withTiming(0.7, { duration: 1000 }),
-      withDelay(500, withTiming(1)),
+    scale.value = withRepeat(
+      withSequence(
+        withDelay(500, withTiming(1)),
+        withTiming(0.7, { duration: 1000 }),
+        withDelay(500, withTiming(1)),
+      ),
+      -1,
+      true,
     )
   }
 
@@ -48,9 +52,9 @@ export const AnimatedControllerScreen = () => {
     onNewAnim()
   }, [])
 
-  const switchControl = () => {
-    cancelAnimation(scale)
-  }
+  // const switchControl = () => {
+  //   cancelAnimation(scale)
+  // }
 
   return (
     <Flex center>
@@ -62,8 +66,8 @@ export const AnimatedControllerScreen = () => {
           <Animated.View style={[animatedCircleStyle, styles.wrapCircle, styles.bg]} />
         </Box>
       </Flex>
-      <PressableMenu title="Start stop" onPress={switchControl} />
-      <PressableMenu title="new anim" onPress={onNewAnim} />
+      {/* <PressableMenu title="Start stop" onPress={switchControl} />
+      <PressableMenu title="new anim" onPress={onNewAnim} /> */}
     </Flex>
   )
 }

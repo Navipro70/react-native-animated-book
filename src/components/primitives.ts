@@ -125,15 +125,13 @@ const textStyles = {
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
-    line-height: 22px;
     letter-spacing: 0.41px;
     color: ${colors.black};
     font-family: ${fonts.regular};
   `,
   bold: css`
-    font-size: 16;
+    font-size: 16px;
     font-family: ${fonts.bold};
-    line-height: 22px;
     letter-spacing: 0.41px;
   `,
 } as const
