@@ -18,6 +18,8 @@ import {
 
 import { colors, fonts, FontsType } from '~/theme'
 
+import { ScalePressBase, ShadowPressBase } from './buttons'
+
 export type BoxProps = BorderProps &
   ColorProps &
   FlexboxProps &
@@ -102,12 +104,20 @@ export const StyledBaseInput = styled.TextInput<
 
 export const Span = styled.Text<SpanProps>`
   color: ${colors.black};
+  font-family: ${fonts.regular};
   ${({ type = 'main' }) => type && textStyles[type]}
-  ${({ font = fonts.regular }) => `font-family: ${font}`}
   ${typography}
   ${space}
   ${color}
   ${({ center }) => center && `text-align: center`}
+`
+
+export const ScalePress = styled(ScalePressBase)<BoxProps>`
+  ${boxStyles}
+`
+
+export const ShadowPress = styled(ShadowPressBase)<BoxProps>`
+  ${boxStyles}
 `
 
 const textStyles = {
@@ -119,6 +129,12 @@ const textStyles = {
     letter-spacing: 0.41px;
     color: ${colors.black};
     font-family: ${fonts.regular};
+  `,
+  bold: css`
+    font-size: 16;
+    font-family: ${fonts.bold};
+    line-height: 22px;
+    letter-spacing: 0.41px;
   `,
 } as const
 

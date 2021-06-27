@@ -87,7 +87,7 @@ rules:
   '@typescript-eslint/switch-exhaustiveness-check': 'error'
   '@typescript-eslint/restrict-plus-operands': 'error'
 
-  react-hooks/exhaustive-deps: 'warn'
+  react-hooks/exhaustive-deps: 'off'
 
   import/no-useless-path-segments: 'error'
   import/no-unused-modules: 'error'

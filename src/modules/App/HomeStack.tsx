@@ -3,6 +3,7 @@ import React from 'react'
 
 import { HomeRoutes } from '~/constants'
 
+import { AnimatedNavigationStack } from '../AnimatedNavigation'
 import { MainScreen } from '../Main'
 import { ReanimatedTutorialStack } from '../ReanimatedTutorial'
 
@@ -24,6 +25,7 @@ export const HomeStack = () => {
         // }}
       />
       <Stack.Screen component={ReanimatedTutorialStack} name={HomeRoutes.ReanimatedTutorial} />
+      <Stack.Screen component={AnimatedNavigationStack} name={HomeRoutes.AnimatedNavigation} />
     </Stack.Navigator>
   )
 }

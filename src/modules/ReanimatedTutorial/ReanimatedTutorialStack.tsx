@@ -3,10 +3,13 @@ import React from 'react'
 
 import { ReanimatedTutorialRoutes } from '~/constants'
 
+import { AnimatedButtonsScreen } from './AnimatedButtonsScreen'
+import { AnimatedControllerScreen } from './AnimatedControllerScreen'
 import { BlocksScreen } from './BlocksScreen'
 import { ReanimatedDocsScreen } from './ReanimatedDocsScreen'
 import { SimpleEventsScreen } from './SimpleEventsScreen'
 import { TransitionsScreen } from './TransitionsScreen'
+import { TwistLoadingScreen } from './TwistScreen'
 
 //https://www.youtube.com/watch?v=wEVjaXK4sYQ&ab_channel=freeCodeCamp.org
 
@@ -19,9 +22,22 @@ export const ReanimatedTutorialStack = () => {
         component={ReanimatedDocsScreen}
         name={ReanimatedTutorialRoutes.ReanimatedDocs}
       />
+      <Stack.Screen
+        component={AnimatedButtonsScreen}
+        name={ReanimatedTutorialRoutes.AnimatedButtons}
+      />
       <Stack.Screen component={BlocksScreen} name={ReanimatedTutorialRoutes.Blocks} />
       <Stack.Screen component={TransitionsScreen} name={ReanimatedTutorialRoutes.Transitions} />
       <Stack.Screen component={SimpleEventsScreen} name={ReanimatedTutorialRoutes.SimpleEvents} />
+      <Stack.Screen
+        component={AnimatedControllerScreen}
+        name={ReanimatedTutorialRoutes.AnimatedController}
+      />
+      <Stack.Screen
+        component={TwistLoadingScreen}
+        name={ReanimatedTutorialRoutes.TwistLoading}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   )
 }

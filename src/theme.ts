@@ -13,6 +13,7 @@ export const colors = {
   lightGray: '#ECECEC',
   gray: '#DEDEDE',
   darkGray: '#D4D4D4',
+  yellow: '#FFCB00',
   lightPink: '#ffe6ef',
   transparent: 'transparent',
 } as const
@@ -23,8 +24,8 @@ export const fonts = {
     android: 'SourceSansPro-Regular',
   }),
   bold: platformSelect({
-    ios: 'SourceSansPro-Bold',
-    android: 'SourceSansPro-Bold',
+    ios: 'SourceSansPro-SemiBold',
+    android: 'SourceSansPro-SemiBold',
   }),
 } as const
 
