@@ -6,8 +6,11 @@ import { ReanimatedTutorialRoutes } from '~/constants'
 import { AnimatedButtonsScreen } from './AnimatedButtonsScreen'
 import { AnimatedControllerScreen } from './AnimatedControllerScreen'
 import { BlocksScreen } from './BlocksScreen'
+import { CustomSlider } from './CusomSlider'
+import { GestureAnimationScreen } from './GestureAnimationScreen/GestureAnimationScreen'
 import { ReanimatedDocsScreen } from './ReanimatedDocsScreen'
 import { SimpleEventsScreen } from './SimpleEventsScreen'
+import { SvgAnimationsScreen } from './SvgAnimationsScreen'
 import { TransitionsScreen } from './TransitionsScreen'
 import { TwistLoadingScreen } from './TwistScreen'
 
@@ -33,11 +36,17 @@ export const ReanimatedTutorialStack = () => {
         component={AnimatedControllerScreen}
         name={ReanimatedTutorialRoutes.AnimatedController}
       />
+      <Stack.Screen component={SvgAnimationsScreen} name={ReanimatedTutorialRoutes.SvgAnimations} />
       <Stack.Screen
         component={TwistLoadingScreen}
         name={ReanimatedTutorialRoutes.TwistLoading}
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        component={GestureAnimationScreen}
+        name={ReanimatedTutorialRoutes.GestureAnimation}
+      />
+      <Stack.Screen component={CustomSlider} name={ReanimatedTutorialRoutes.CustomSlider} />
     </Stack.Navigator>
   )
 }
