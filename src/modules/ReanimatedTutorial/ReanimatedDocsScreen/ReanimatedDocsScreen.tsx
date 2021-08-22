@@ -14,6 +14,7 @@ export const ReanimatedDocsScreen = ({ navigation: { navigate } }) => {
   const onPressTwist = () => navigate(ReanimatedTutorialRoutes.TwistLoading)
   const onPressGesture = () => navigate(ReanimatedTutorialRoutes.GestureAnimation)
   const onPressSlider = () => navigate(ReanimatedTutorialRoutes.CustomSlider)
+  const onPressTinder = () => navigate(ReanimatedTutorialRoutes.TinderCards)
 
   return (
     <Flex bg={colors.white} p={16}>
@@ -26,6 +27,7 @@ export const ReanimatedDocsScreen = ({ navigation: { navigate } }) => {
       <PressableMenu mt={16} title="Twist loading" onPress={onPressTwist} />
       <PressableMenu mt={16} title="Gesture animation" onPress={onPressGesture} />
       <PressableMenu mt={16} title="Custom slider" onPress={onPressSlider} />
+      <PressableMenu mt={16} title="Tinder cards" onPress={onPressTinder} />
     </Flex>
   )
 }

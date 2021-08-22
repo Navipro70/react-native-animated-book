@@ -5,6 +5,8 @@ import Svg, { Circle, G } from 'react-native-svg'
 import { Flex, PressableMenu } from '~/components'
 import { colors } from '~/theme'
 
+import { RectCircleAnim, SvgTransform } from './components'
+
 const SECS = 5
 
 const size = 128
@@ -51,6 +53,8 @@ export const SvgAnimationsScreen = () => {
           })
         }}
       />
+      <RectCircleAnim />
+      <SvgTransform />
     </Flex>
   )
 }

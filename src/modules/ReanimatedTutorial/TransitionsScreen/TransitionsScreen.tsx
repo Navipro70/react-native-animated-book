@@ -15,12 +15,14 @@ import { colors } from '~/theme'
 
 export const TransitionsScreen = () => {
   const { bottom } = useSafeAreaInsets()
-  const [toggled, setToggled] = useState(false)
+  const [, setToggled] = useState(false)
   const transition = useSharedValue(0)
 
   const switchToggled = () => {
-    transition.value = withTiming(Number(toggled))
-    setToggled((v) => !v)
+    setToggled((v) => {
+      transition.value = withTiming(Number(!v))
+      return !v
+    })
   }
 
   return (

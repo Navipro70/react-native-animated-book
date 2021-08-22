@@ -11,10 +11,9 @@ import { GestureAnimationScreen } from './GestureAnimationScreen/GestureAnimatio
 import { ReanimatedDocsScreen } from './ReanimatedDocsScreen'
 import { SimpleEventsScreen } from './SimpleEventsScreen'
 import { SvgAnimationsScreen } from './SvgAnimationsScreen'
+import { TinderCardsScreen } from './TinderCardsScreen'
 import { TransitionsScreen } from './TransitionsScreen'
 import { TwistLoadingScreen } from './TwistScreen'
-
-//https://www.youtube.com/watch?v=wEVjaXK4sYQ&ab_channel=freeCodeCamp.org
 
 const Stack = createStackNavigator()
 
@@ -47,6 +46,7 @@ export const ReanimatedTutorialStack = () => {
         name={ReanimatedTutorialRoutes.GestureAnimation}
       />
       <Stack.Screen component={CustomSlider} name={ReanimatedTutorialRoutes.CustomSlider} />
+      <Stack.Screen component={TinderCardsScreen} name={ReanimatedTutorialRoutes.TinderCards} />
     </Stack.Navigator>
   )
 }

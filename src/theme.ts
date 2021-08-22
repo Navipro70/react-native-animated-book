@@ -13,6 +13,7 @@ export const colors = {
   lightGray: '#ECECEC',
   gray: '#DEDEDE',
   darkGray: '#D4D4D4',
+  darkestGray: '#444444',
   yellow: '#FFCB00',
   lightPink: '#ffe6ef',
   transparent: 'transparent',

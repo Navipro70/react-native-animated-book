@@ -121,18 +121,67 @@ export const ShadowPress = styled(ShadowPressBase)<BoxProps>`
 `
 
 const textStyles = {
+  main20: css`
+    font-size: 20px;
+    letter-spacing: 0.41px;
+    font-family: ${fonts.regular};
+  `,
+  main18: css`
+    font-size: 18px;
+    letter-spacing: 0.41px;
+    font-family: ${fonts.regular};
+    line-height: 26px;
+  `,
   main: css`
-    font-weight: 400;
-    font-style: normal;
     font-size: 16px;
     letter-spacing: 0.41px;
-    color: ${colors.black};
     font-family: ${fonts.regular};
+  `,
+  main14: css`
+    font-size: 14px;
+    letter-spacing: 0.41px;
+    font-family: ${fonts.regular};
+  `,
+  main12: css`
+    font-size: 12px;
+    letter-spacing: 0.41px;
+    font-family: ${fonts.regular};
+  `,
+  bold24: css`
+    font-size: 24px;
+    font-family: ${fonts.bold};
+    letter-spacing: 0.3px;
+  `,
+  bold22: css`
+    font-size: 22px;
+    font-family: ${fonts.bold};
+    letter-spacing: 0.3px;
+  `,
+  bold20: css`
+    font-size: 20px;
+    font-family: ${fonts.bold};
+    letter-spacing: 0.3px;
+  `,
+  bold18: css`
+    font-size: 16px;
+    font-family: ${fonts.bold};
   `,
   bold: css`
     font-size: 16px;
     font-family: ${fonts.bold};
     letter-spacing: 0.41px;
+  `,
+  bold14: css`
+    font-size: 14px;
+    font-family: ${fonts.bold};
+  `,
+  bold12: css`
+    font-size: 12px;
+    font-family: ${fonts.bold};
+  `,
+  bold10: css`
+    font-size: 10px;
+    font-family: ${fonts.bold};
   `,
 } as const
 
