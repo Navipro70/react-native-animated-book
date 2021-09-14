@@ -104,18 +104,8 @@ export const Slider = ({ maxValue, value, onSlidingEnd, onSlidingStart }: Props)
               <Animated.View style={[styles.thumbCircle, thumbCircleAnimStyle]} />
             </Animated.View>
 
-            <Row style={{ overflow: 'hidden', width: '100%', height: 4 }}>
-              <Animated.View
-                style={[
-                  {
-                    width: `100%`,
-                    height: 4,
-                    backgroundColor: colors.darkGray,
-                    position: 'absolute',
-                  },
-                  progressAnimStyle,
-                ]}
-              />
+            <Row style={styles.progressContainer}>
+              <Animated.View style={[styles.progress, progressAnimStyle]} />
             </Row>
           </Animated.View>
         </PanGestureHandler>
@@ -134,6 +124,17 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     height: SLIDE_HEIGHT,
     width: '100%',
+  },
+  progressContainer: {
+    overflow: 'hidden',
+    width: '100%',
+    height: 4,
+  },
+  progress: {
+    width: `100%`,
+    height: 4,
+    backgroundColor: colors.darkGray,
+    position: 'absolute',
   },
   thumb: {
     zIndex: 1,

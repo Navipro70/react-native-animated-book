@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Flex, PressableMenu } from '~/components'
+import { Flex } from '~/components'
 import { colors } from '~/theme'
 
 import { Slider } from './components/Slider'

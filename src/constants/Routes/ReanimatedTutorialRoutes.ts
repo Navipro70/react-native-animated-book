@@ -10,4 +10,5 @@ export enum ReanimatedTutorialRoutes {
   GestureAnimation = 'GestureAnimation',
   CustomSlider = 'CustomSlider',
   TinderCards = 'TinderCards',
+  CircleSlider = 'CircleSlider',
 }

@@ -15,6 +15,7 @@ export const ReanimatedDocsScreen = ({ navigation: { navigate } }) => {
   const onPressGesture = () => navigate(ReanimatedTutorialRoutes.GestureAnimation)
   const onPressSlider = () => navigate(ReanimatedTutorialRoutes.CustomSlider)
   const onPressTinder = () => navigate(ReanimatedTutorialRoutes.TinderCards)
+  const onPressCircleSlider = () => navigate(ReanimatedTutorialRoutes.CircleSlider)
 
   return (
     <Flex bg={colors.white} p={16}>
@@ -28,6 +29,7 @@ export const ReanimatedDocsScreen = ({ navigation: { navigate } }) => {
       <PressableMenu mt={16} title="Gesture animation" onPress={onPressGesture} />
       <PressableMenu mt={16} title="Custom slider" onPress={onPressSlider} />
       <PressableMenu mt={16} title="Tinder cards" onPress={onPressTinder} />
+      <PressableMenu mt={16} title="Circle slider" onPress={onPressCircleSlider} />
     </Flex>
   )
 }

@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyleSheet } from 'react-native'
-import Animated from 'react-native-reanimated'
+import { PanGestureHandler } from 'react-native-gesture-handler'
+import Animated, {
+  useAnimatedGestureHandler,
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+  interpolate,
+  withTiming,
+  runOnJS,
+} from 'react-native-reanimated'
 
 import { Box, Flex, ImageBox, Span } from '~/components'
+import { SCREEN_WIDTH } from '~/constants'
 import { colors } from '~/theme'
+
+const SWIPE_OFFSET = SCREEN_WIDTH / 4
 
 interface ICard {
   id: string
@@ -15,36 +27,74 @@ interface ICard {
 
 interface Props extends ICard {
   isActive: boolean
-  animatedStyle: object
+  isPrev: boolean
+  removeCard: () => void
 }
 
-export const Card = ({ isActive, animatedStyle, imgUrl, date, title, description }: Props) => {
+export const Card = ({ isActive, isPrev, imgUrl, date, title, description, removeCard }: Props) => {
+  const scale = useSharedValue(isActive ? 1 : 0.95)
+  const x = useSharedValue(0)
+
+  useEffect(() => {
+    scale.value = withTiming(isActive ? 1 : 0.95)
+  }, [isActive])
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [
+      { scale: scale.value },
+      { translateX: x.value },
+      { rotateZ: `${interpolate(x.value, [0, 1000], [0, 1])}` },
+    ],
+  }))
+
+  const onNextCard = () => {
+    setTimeout(removeCard, 300)
+  }
+
+  const panGesture = useAnimatedGestureHandler({
+    onActive: (e) => {
+      x.value = e.translationX
+    },
+    onEnd: () => {
+      if (Math.abs(x.value) > SWIPE_OFFSET * 2) {
+        x.value = withTiming(SWIPE_OFFSET * (x.value > 0 ? 5 : -5), { duration: 260 })
+        runOnJS(onNextCard)()
+      } else {
+        x.value = withSpring(0)
+      }
+    },
+  })
+
+  if (!isPrev && !isActive) return null
+
   return (
-    <Animated.View style={[isActive ? animatedStyle : styles.notSelected, styles.container]}>
-      <Flex>
-        <Box style={styles.badge}>
-          <Span children={date} color={colors.white} textAlign="center" type="bold14" />
-        </Box>
-        <ImageBox
-          bg={colors.gray}
-          borderTopLeftRadius={16}
-          borderTopRightRadius={16}
-          flex={1}
-          resizeMode="cover"
-          source={{ uri: imgUrl }}
-        />
-      </Flex>
-      <Flex p={20}>
-        <Span children={title} numberOfLines={1} textAlign="center" type="bold22" />
-        <Span
-          children={description}
-          color={colors.darkestGray}
-          mt={8}
-          numberOfLines={12}
-          type="main18"
-        />
-      </Flex>
-    </Animated.View>
+    <PanGestureHandler minDist={0} onGestureEvent={panGesture}>
+      <Animated.View style={[styles.container, animatedStyle, !isActive && styles.notSelected]}>
+        <Flex>
+          <Box style={styles.badge}>
+            <Span children={date} color={colors.white} textAlign="center" type="bold14" />
+          </Box>
+          <ImageBox
+            bg={colors.gray}
+            borderTopLeftRadius={16}
+            borderTopRightRadius={16}
+            flex={1}
+            resizeMode="cover"
+            source={{ uri: imgUrl }}
+          />
+        </Flex>
+        <Flex p={20}>
+          <Span children={title} mx={16} numberOfLines={2} textAlign="center" type="bold20" />
+          <Span
+            children={description}
+            color={colors.darkestGray}
+            mt={8}
+            numberOfLines={10}
+            type="main18"
+          />
+        </Flex>
+      </Animated.View>
+    </PanGestureHandler>
   )
 }
 
@@ -70,8 +120,7 @@ const styles = StyleSheet.create({
     elevation: 7,
   },
   notSelected: {
-    transform: [{ scale: 0.95 }],
-    zIndex: 0,
+    zIndex: 1,
   },
   badge: {
     justifyContent: 'center',
