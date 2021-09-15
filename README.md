@@ -1,7 +1,25 @@
 ## TODO:
 
-### ❌ 1. Переделать дизайн приложения на нормальный)
+### - [x] 1. Подключить hermes для android, IOS
 
-### ❌ 2. Доделать анимации по навигации (в тч включить простые анимации из самой библиотеки из TransitionPresets, TransitionPresets.ModalPresentationIOS, TransitionPresets.FadeFromBottomAndroid etc.), shared elements, проверить весь код, подключить hermes для android, layout animations из reanimated v2.3.alpha, FlatList и ScrollView animations, добавить CI/CD, добавить иконку и анимированный сплеш скрин.
+### - [x] 2. AppIcons
 
-### ❌ 3. Обновить readme.md файл где будет рассказано о том что этот проект создан для изучения react-native-reanimated библиотеки, анимаций по навигации и прикрепить gif's с примерами анимаций.
+### - [x] 3. Animated splash screen
+
+### - [] 4. Переделать дизайн приложения на нормальный)
+
+### - [] 5. Добавить темизацию (в тч. SplashScreen)
+
+### - [] 6. Доделать анимации по навигации (в тч включить простые анимации из самой библиотеки из TransitionPresets, TransitionPresets.ModalPresentationIOS, TransitionPresets.FadeFromBottomAndroid etc.)
+
+### - [] 7. SharedElements animations.
+
+### - [] 8. Layout animations (reanimated v2.3.alpha)
+
+### - [] 9. FlatList and ScrollView animations
+
+### - [] 10. CI/CD
+
+### - [] 11. Проверить весь код, отрефачить готовые блоки, проверить все анимации на android/IOS.
+
+### - [] 12. Обновить readme.md файл где будет рассказано о том что этот проект создан для изучения react-native-reanimated библиотеки, анимаций по навигации и прикрепить gif's с примерами анимаций.
