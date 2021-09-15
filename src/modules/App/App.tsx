@@ -21,16 +21,14 @@ export const App = () => {
   const splashProps = useAnimatedSplash()
 
   return (
-    <>
-      <AnimatedSplash {...splashProps} />
-      <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <SafeAreaProvider>
-            <StatusBar translucent backgroundColor={colors.transparent} barStyle="dark-content" />
-            <HomeStack />
-          </SafeAreaProvider>
-        </NavigationContainer>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <NavigationContainer>
+        <SafeAreaProvider>
+          <StatusBar backgroundColor={colors.transparent} barStyle="dark-content" />
+          <AnimatedSplash {...splashProps} />
+          <HomeStack />
+        </SafeAreaProvider>
+      </NavigationContainer>
+    </ThemeProvider>
   )
 }

@@ -38,5 +38,5 @@ const AnimatedContainer = styled(Animated.View)`
   right: 0;
   bottom: 0;
   background-color: ${colors.white};
-  z-index: 100;
+  z-index: ${Number.MAX_SAFE_INTEGER};
 `
