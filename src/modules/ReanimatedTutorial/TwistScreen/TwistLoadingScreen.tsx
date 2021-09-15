@@ -10,7 +10,7 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated'
 
-import { foodsImgs } from '~/assets'
+import { foodImgs } from '~/assets'
 import { Flex } from '~/components'
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '~/constants'
 import { colors } from '~/theme'
@@ -62,10 +62,10 @@ export const TwistLoadingScreen = () => {
     <Flex center>
       <Animated.View style={[styles.overlayTransition, overlayTranslateAnimStyle]} />
       <Animated.View style={[styles.overlayRotation, overlayRotationAnimStyle]}>
-        <Animated.Image source={foodsImgs.iceCream} style={[styles.card, overlayCardAnimStyle]} />
+        <Animated.Image source={foodImgs.iceCream} style={[styles.card, overlayCardAnimStyle]} />
       </Animated.View>
       <Animated.View style={styles.absoluteCenter}>
-        <Animated.Image source={foodsImgs.borkkoli} style={[styles.card, staticCardAnimStyle]} />
+        <Animated.Image source={foodImgs.borkkoli} style={[styles.card, staticCardAnimStyle]} />
       </Animated.View>
     </Flex>
   )

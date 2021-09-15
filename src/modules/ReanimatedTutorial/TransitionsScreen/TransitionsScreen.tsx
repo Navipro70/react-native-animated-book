@@ -28,7 +28,7 @@ export const TransitionsScreen = () => {
   return (
     <Flex bg={colors.white}>
       <Flex center>
-        {cardsImgs.map((source, index) => {
+        {(cardsImgs as string[]).map((source, index) => {
           return <Card index={index} key={source} source={source} transition={transition} />
         })}
       </Flex>

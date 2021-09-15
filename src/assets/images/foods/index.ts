@@ -3,7 +3,7 @@
 import borkkoli from './borkkoli.png'
 import iceCream from './iceCream.png'
 
-export const foodsImgs = {
+export const foodImgs = {
   iceCream,
   borkkoli,
 }
