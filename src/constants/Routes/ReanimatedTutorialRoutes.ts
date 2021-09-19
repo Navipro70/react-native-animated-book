@@ -1,5 +1,5 @@
 export enum ReanimatedTutorialRoutes {
-  ReanimatedDocs = 'ReanimatedDocs',
+  ReanimatedAnimationsMain = 'ReanimatedAnimationsMain',
   AnimatedButtons = 'AnimatedButtons',
   Transitions = 'Transitions',
   Blocks = 'Blocks',
@@ -10,5 +10,4 @@ export enum ReanimatedTutorialRoutes {
   GestureAnimation = 'GestureAnimation',
   CustomSlider = 'CustomSlider',
   TinderCards = 'TinderCards',
-  CircleSlider = 'CircleSlider',
 }

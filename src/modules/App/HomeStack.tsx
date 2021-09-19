@@ -5,7 +5,7 @@ import { HomeRoutes } from '~/constants'
 
 import { AnimatedNavigationStack } from '../AnimatedNavigation'
 import { MainScreen } from '../Main'
-import { ReanimatedTutorialStack } from '../ReanimatedTutorial'
+import { ReanimatedAnimationsStack } from '../ReanimatedAnimations'
 
 const Stack = createStackNavigator()
 
@@ -15,16 +15,12 @@ export const HomeStack = () => {
       <Stack.Screen
         component={MainScreen}
         name={HomeRoutes.Main}
-        // options={{
-        //   ...defaultScreenOptions,
-        //   headerLeft: (props) => (
-        //     <HeaderBackButton {...props} variant="close" onPress={UserModel.handleLogout} />
-        //   ),
-        //   headerShown: true,
-        //   headerTitle: () => <HeaderTitle title={i18n.headers.password} />,
-        // }}
+        options={{
+          headerShown: true,
+          title: 'Animation types',
+        }}
       />
-      <Stack.Screen component={ReanimatedTutorialStack} name={HomeRoutes.ReanimatedTutorial} />
+      <Stack.Screen component={ReanimatedAnimationsStack} name={HomeRoutes.ReanimatedAnimations} />
       <Stack.Screen component={AnimatedNavigationStack} name={HomeRoutes.AnimatedNavigation} />
     </Stack.Navigator>
   )

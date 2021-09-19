@@ -3,6 +3,9 @@ import { DefaultTheme } from 'styled-components'
 import { platformSelect } from './utils'
 
 export const colors = {
+  bgPrimary: '#F6F5F8',
+  border: 'rgba(0, 0, 0, 0.1)',
+  press: 'rgba(0, 0, 0, 0.5)',
   white: '#FFFFFF',
   black: '#000000',
   pink: 'rgba(241,70,53,0.1)',

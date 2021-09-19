@@ -1,9 +1,9 @@
 import React from 'react'
 import { StyleProp, TouchableOpacityProps, ViewStyle } from 'react-native'
 
-import { duration } from '~/theme'
+import { colors, duration } from '~/theme'
 
-import { BoxProps, StyledTouchableOpacity } from './primitives'
+import { BoxProps, StyledTouchableOpacity, StyledTouchableHighlight } from './primitives'
 
 interface PressableViewProps
   extends BoxProps,
@@ -26,6 +26,24 @@ export const PressableView: React.FC<PressableViewProps> = ({
     <StyledTouchableOpacity
       activeOpacity={0.6}
       disabled={disabled}
+      onLongPress={onLongPress}
+      onPress={onPress}
+      {...rest}
+    />
+  )
+}
+
+export const HighlightView: React.FC<PressableViewProps> = ({
+  onPress,
+  onLongPress,
+  disabled = !onPress && !onLongPress,
+  delay = duration.fast,
+  ...rest
+}) => {
+  return (
+    <StyledTouchableHighlight
+      disabled={disabled}
+      underlayColor={colors.press}
       onLongPress={onLongPress}
       onPress={onPress}
       {...rest}

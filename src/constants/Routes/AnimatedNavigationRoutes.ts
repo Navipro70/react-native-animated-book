@@ -1,3 +1,3 @@
 export enum AnimatedNavigationRoutes {
-  AnimatedNavigationDocs = 'AnimatedNavigationDocs',
+  AnimatedNavigationMain = 'AnimatedNavigationMain',
 }

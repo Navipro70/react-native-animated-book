@@ -83,6 +83,10 @@ export const StyledTouchableOpacity = styled.TouchableOpacity<BoxProps>`
   ${boxStyles}
 `
 
+export const StyledTouchableHighlight = styled.TouchableHighlight<BoxProps>`
+  ${boxStyles}
+`
+
 export const ScrollBox = styled.ScrollView<BoxProps>`
   ${boxStyles}
 `
@@ -107,8 +111,7 @@ export const Span = styled.Text<SpanProps>`
   font-family: ${fonts.regular};
   ${({ type = 'main' }) => type && textStyles[type]}
   ${typography}
-  ${space}
-  ${color}
+  ${boxStyles}
   ${({ center }) => center && `text-align: center`}
 `
 

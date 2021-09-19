@@ -3,17 +3,25 @@ import React from 'react'
 
 import { AnimatedNavigationRoutes } from '~/constants'
 
-import { AnimatedNavigationDocsScreen } from './AnimatedNavigationDocsScreen'
+import { AnimatedNavigationMainScreen } from './AnimatedNavigationMainScreen'
 
 const Stack = createStackNavigator()
 
 export const AnimatedNavigationStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={screensOptions}>
       <Stack.Screen
-        component={AnimatedNavigationDocsScreen}
-        name={AnimatedNavigationRoutes.AnimatedNavigationDocs}
+        component={AnimatedNavigationMainScreen}
+        name={AnimatedNavigationRoutes.AnimatedNavigationMain}
+        options={{ title: 'Animated navigation' }}
       />
     </Stack.Navigator>
   )
+}
+
+const screensOptions = {
+  headerBackTitleVisible: false,
+  headerLeftContainerStyle: {
+    left: 6,
+  },
 }

@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { ReactElement } from 'react'
 
 import { Icons } from '~/assets'
 import { colors } from '~/theme'
 
-import { PressableView } from './PressableView'
+import { HighlightView } from './PressableView'
 import { BoxProps, Span, Box, Row } from './primitives'
 
 interface Props extends BoxProps {
@@ -24,24 +25,28 @@ export const PressableMenu = ({
   if (!title) return null
 
   return (
-    <PressableView onPress={onPress}>
+    <HighlightView onPress={onPress} {...boxProps}>
       <Row
         alignItems="center"
-        bg={colors.gray}
-        borderRadius={8}
+        bg={colors.white}
+        borderBottomWidth={0.5}
+        borderColor={colors.border}
+        borderTopWidth={0.5}
+        flex={1}
         justifyContent="space-between"
-        p={10}
+        p={11}
+        pl={20}
         width="100%"
-        {...boxProps}
       >
         {icon && <Box mr={8}>{icon}</Box>}
-        <Span children={title} color={color} numberOfLines={1} />
+        {/*@ts-ignore */}
+        <Span children={title} color={color} flex={1} numberOfLines={1} />
         {onPress && (
           <Box>
             <Icons.ArrowRight color={color as string} />
           </Box>
         )}
       </Row>
-    </PressableView>
+    </HighlightView>
   )
 }

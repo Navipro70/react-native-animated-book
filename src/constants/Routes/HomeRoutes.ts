@@ -1,5 +1,5 @@
 export enum HomeRoutes {
   Main = 'Main',
-  ReanimatedTutorial = 'ReanimatedTutorial',
+  ReanimatedAnimations = 'ReanimatedAnimations',
   AnimatedNavigation = 'AnimatedNavigation',
 }
