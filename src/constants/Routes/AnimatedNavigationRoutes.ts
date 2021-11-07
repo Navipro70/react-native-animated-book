@@ -8,4 +8,7 @@ export enum AnimatedNavigationRoutes {
   CenterScaleAndroid = 'CenterScaleAndroid',
   DefaultTransition = 'DefaultTransition',
   DefaultModalTransition = 'DefaultModalTransition',
+  CustomRotateTransition = 'CustomRotateTransition',
+  CustomOpacityTransition = 'CustomOpacityTransition',
+  CustomModalTransition = 'CustomModalTransition',
 }

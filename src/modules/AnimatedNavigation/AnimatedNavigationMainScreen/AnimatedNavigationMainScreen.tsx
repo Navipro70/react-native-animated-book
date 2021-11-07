@@ -14,6 +14,9 @@ export const AnimatedNavigationMainScreen = ({ navigation: { navigate } }) => {
   const onCenterScaleAndroid = () => navigate(AnimatedNavigationRoutes.CenterScaleAndroid)
   const onDefaultTransition = () => navigate(AnimatedNavigationRoutes.DefaultTransition)
   const onDefaultModalTransition = () => navigate(AnimatedNavigationRoutes.DefaultModalTransition)
+  const onCustomOpacityTransition = () => navigate(AnimatedNavigationRoutes.CustomOpacityTransition)
+  const onCustomModalTransition = () => navigate(AnimatedNavigationRoutes.CustomModalTransition)
+  const onCustomRotateTransition = () => navigate(AnimatedNavigationRoutes.CustomRotateTransition)
 
   return (
     <ScrollBox
@@ -29,6 +32,9 @@ export const AnimatedNavigationMainScreen = ({ navigation: { navigate } }) => {
       <PressableMenu title="Center scale Android" onPress={onCenterScaleAndroid} />
       <PressableMenu title="Default transition" onPress={onDefaultTransition} />
       <PressableMenu title="Default modal transition" onPress={onDefaultModalTransition} />
+      <PressableMenu title="Custom rotate transition" onPress={onCustomRotateTransition} />
+      <PressableMenu title="Custom opacity transition" onPress={onCustomOpacityTransition} />
+      <PressableMenu title="Custom modal transition" onPress={onCustomModalTransition} />
     </ScrollBox>
   )
 }
