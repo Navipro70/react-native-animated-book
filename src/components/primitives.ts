@@ -145,6 +145,11 @@ const textStyles = {
     letter-spacing: 0.41px;
     font-family: ${fonts.regular};
   `,
+  main16: css`
+    font-size: 16px;
+    letter-spacing: 0.41px;
+    font-family: ${fonts.regular};
+  `,
   main14: css`
     font-size: 14px;
     letter-spacing: 0.41px;
