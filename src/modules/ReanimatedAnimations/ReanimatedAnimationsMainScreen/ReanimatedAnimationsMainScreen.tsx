@@ -31,11 +31,8 @@ export const ReanimatedAnimationsMainScreen = ({ navigation: { navigate } }) => 
       <PressableMenu title="RGB color picker" onPress={onPressRgb} />
       <PressableMenu title="Video player slider" onPress={onPressVideoSlider} />
       <PressableMenu title="Complicated cards gesture" onPress={onPressGesture} />
-      <PressableMenu mb={32} title="Tinder cards" onPress={onPressTinder} />
-      <PressableMenu
-        title="Exercises controller TODO придумать идею и доделать"
-        onPress={onPressController}
-      />
+      <PressableMenu title="Tinder cards" onPress={onPressTinder} />
+      <PressableMenu title="Exercises controller" onPress={onPressController} />
     </ScrollBox>
   )
 }
