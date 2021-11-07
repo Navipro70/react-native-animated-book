@@ -53,7 +53,7 @@ export const Card = ({
     transform: [
       { scale: scale.value },
       { translateX: x.value },
-      { rotateZ: `${interpolate(x.value, [0, 1000], [0, 1])}` },
+      { rotateZ: `${interpolate(x.value, [0, 1000], [0, 60])}deg` },
     ],
   }))
 

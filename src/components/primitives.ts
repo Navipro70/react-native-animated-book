@@ -1,4 +1,5 @@
 import { Image } from 'react-native'
+import Animated from 'react-native-reanimated'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import styled, { css } from 'styled-components/native'
 import {
@@ -120,6 +121,10 @@ export const ScalePress = styled(ScalePressBase)<BoxProps>`
 `
 
 export const ShadowPress = styled(ShadowPressBase)<BoxProps>`
+  ${boxStyles}
+`
+
+export const AnimatedBox = styled(Animated.View)<BoxProps>`
   ${boxStyles}
 `
 

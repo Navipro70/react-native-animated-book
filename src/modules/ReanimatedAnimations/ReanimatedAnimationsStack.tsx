@@ -6,14 +6,14 @@ import { ReanimatedTutorialRoutes } from '~/constants'
 import { AnimatedButtonsScreen } from './AnimatedButtonsScreen'
 import { AnimatedControllerScreen } from './AnimatedControllerScreen'
 import { BlocksScreen } from './BlocksScreen'
-import { CustomSlider } from './CusomSlider'
 import { GestureAnimationScreen } from './GestureAnimationScreen'
 import { ReanimatedAnimationsMainScreen } from './ReanimatedAnimationsMainScreen'
+import { RgbScreen } from './RrgScreen'
 import { SimpleEventsScreen } from './SimpleEventsScreen'
-import { SvgAnimationsScreen } from './SvgAnimationsScreen'
 import { TinderCardsScreen } from './TinderCardsScreen'
 import { TransitionsScreen } from './TransitionsScreen'
 import { TwistLoadingScreen } from './TwistScreen'
+import { VideoSliderScreen } from './VideoSliderScreen'
 
 const Stack = createStackNavigator()
 
@@ -58,8 +58,13 @@ export const ReanimatedAnimationsStack = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        component={CustomSlider}
-        name={ReanimatedTutorialRoutes.CustomSlider}
+        component={RgbScreen}
+        name={ReanimatedTutorialRoutes.Rgb}
+        options={{ title: 'RGB color picker' }}
+      />
+      <Stack.Screen
+        component={VideoSliderScreen}
+        name={ReanimatedTutorialRoutes.VideoSlider}
         options={{ title: 'Video player slider' }}
       />
       <Stack.Screen
@@ -68,11 +73,6 @@ export const ReanimatedAnimationsStack = () => {
         options={{ title: 'Сomplicated cards gesture' }}
       />
 
-      <Stack.Screen
-        component={SvgAnimationsScreen}
-        name={ReanimatedTutorialRoutes.SvgAnimations}
-        options={{ title: 'SVG animations' }}
-      />
       <Stack.Screen
         component={AnimatedControllerScreen}
         name={ReanimatedTutorialRoutes.AnimatedController}

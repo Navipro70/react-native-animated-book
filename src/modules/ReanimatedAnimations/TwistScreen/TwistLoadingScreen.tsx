@@ -23,7 +23,6 @@ export const TwistLoadingScreen = () => {
   const twistRotate = useSharedValue(90)
   const plateScale = useSharedValue(0)
   const overlayTranslateAnimStyle = useAnimatedStyle(() => ({
-    display: overlayTranslate.value === HALF_SCREEN_HEIGHT ? 'none' : 'flex',
     transform: [{ translateY: overlayTranslate.value }],
   }))
   const overlayRotationAnimStyle = useAnimatedStyle(() => ({
@@ -45,7 +44,12 @@ export const TwistLoadingScreen = () => {
   }))
 
   useEffect(() => {
-    overlayTranslate.value = withDelay(200, withTiming(HALF_SCREEN_HEIGHT, { duration: 600 }))
+    overlayTranslate.value = withDelay(
+      200,
+      withTiming(HALF_SCREEN_HEIGHT, { duration: 600 }, () => {
+        overlayTranslate.value = SCREEN_HEIGHT
+      }),
+    )
     plateScale.value = withDelay(1000, withSpring(1))
     twistRotate.value = withRepeat(
       withSequence(

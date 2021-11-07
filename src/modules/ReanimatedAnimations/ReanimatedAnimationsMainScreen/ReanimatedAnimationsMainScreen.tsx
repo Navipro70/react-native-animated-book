@@ -11,10 +11,10 @@ export const ReanimatedAnimationsMainScreen = ({ navigation: { navigate } }) => 
   const onPressBlocks = () => navigate(ReanimatedTutorialRoutes.Blocks)
   const onPressSimpleEvents = () => navigate(ReanimatedTutorialRoutes.SimpleEvents)
   const onPressController = () => navigate(ReanimatedTutorialRoutes.AnimatedController)
-  const onPressSvg = () => navigate(ReanimatedTutorialRoutes.SvgAnimations)
   const onPressTwist = () => navigate(ReanimatedTutorialRoutes.TwistLoading)
   const onPressGesture = () => navigate(ReanimatedTutorialRoutes.GestureAnimation)
-  const onPressSlider = () => navigate(ReanimatedTutorialRoutes.CustomSlider)
+  const onPressRgb = () => navigate(ReanimatedTutorialRoutes.Rgb)
+  const onPressVideoSlider = () => navigate(ReanimatedTutorialRoutes.VideoSlider)
   const onPressTinder = () => navigate(ReanimatedTutorialRoutes.TinderCards)
 
   return (
@@ -27,15 +27,11 @@ export const ReanimatedAnimationsMainScreen = ({ navigation: { navigate } }) => 
       <PressableMenu title="Cards rotations" onPress={onPressCards} />
       <PressableMenu title="Elements transitions" onPress={onPressBlocks} />
       <PressableMenu title="Gesture event" onPress={onPressSimpleEvents} />
-
-      <PressableMenu mt={32} title="Tinder cards" onPress={onPressTinder} />
-      <PressableMenu title="Twist loading TODO пофиксить андроид" onPress={onPressTwist} />
-      <PressableMenu title="Video player slider" onPress={onPressSlider} />
+      <PressableMenu title="Twist loading" onPress={onPressTwist} />
+      <PressableMenu title="RGB color picker" onPress={onPressRgb} />
+      <PressableMenu title="Video player slider" onPress={onPressVideoSlider} />
       <PressableMenu title="Complicated cards gesture" onPress={onPressGesture} />
-      <PressableMenu
-        title="SVG animations TODO (красиво оформить, дополнить анимации кривых и показать анимации с dashboard offset (постепенная отрисовка)"
-        onPress={onPressSvg}
-      />
+      <PressableMenu mb={32} title="Tinder cards" onPress={onPressTinder} />
       <PressableMenu
         title="Exercises controller TODO придумать идею и доделать"
         onPress={onPressController}

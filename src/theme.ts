@@ -20,6 +20,9 @@ export const colors = {
   yellow: '#FFCB00',
   lightPink: '#ffe6ef',
   transparent: 'transparent',
+  strictRed: 'red',
+  strictGreen: 'green',
+  strictBlue: 'blue',
 } as const
 
 export const fonts = {

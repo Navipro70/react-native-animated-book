@@ -5,9 +5,9 @@ export enum ReanimatedTutorialRoutes {
   Blocks = 'Blocks',
   SimpleEvents = 'SimpleEvents',
   AnimatedController = 'AnimatedController',
-  SvgAnimations = 'SvgAnimations',
   TwistLoading = 'TwistLoading',
   GestureAnimation = 'GestureAnimation',
-  CustomSlider = 'CustomSlider',
+  Rgb = 'Rgb',
+  VideoSlider = 'VideoSlider',
   TinderCards = 'TinderCards',
 }

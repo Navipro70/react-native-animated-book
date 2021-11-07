@@ -1,3 +1,4 @@
+import noop from 'lodash/noop'
 import React, { useEffect, useState } from 'react'
 import {
   GestureResponderEvent,
@@ -28,16 +29,25 @@ const THUMB_SIZE = 14
 const SLIDE_HEIGHT = 4
 
 interface Props {
-  value: number
+  value?: number
   maxValue: number
-  onSlidingStart: () => void
-  onSlidingEnd: (v: number) => void
+  progress: Animated.SharedValue<number>
+  isShowText?: boolean
+  onSlidingStart?: () => void
+  onSlidingEnd?: (v: number) => void
 }
 
-export const Slider = ({ maxValue, value, onSlidingEnd, onSlidingStart }: Props) => {
+export const Slider = ({
+  maxValue,
+  value = 0,
+  progress,
+  isShowText = false,
+  onSlidingEnd = noop,
+  onSlidingStart = noop,
+}: Props) => {
   const thumbCircleScale = useSharedValue(1)
   const [sliderWidth, setSliderWidth] = useState(0)
-  const progress = useSharedValue(0)
+  const animatedText = useSharedValue('0:00')
 
   useEffect(() => {
     const progressWidth = Math.round(value * sliderWidth) / maxValue
@@ -52,7 +62,9 @@ export const Slider = ({ maxValue, value, onSlidingEnd, onSlidingStart }: Props)
     transform: [{ translateX: progress.value }],
   }))
 
-  const animatedText = useDerivedValue(() => convertSecToTime(sliderValue.value))
+  useDerivedValue(() => {
+    animatedText.value = convertSecToTime(sliderValue.value)
+  })
 
   const onGestureEvent = useAnimatedGestureHandler<
     PanGestureHandlerGestureEvent,
@@ -110,10 +122,12 @@ export const Slider = ({ maxValue, value, onSlidingEnd, onSlidingStart }: Props)
           </Animated.View>
         </PanGestureHandler>
       </TouchableOpacity>
-      <Row justifyContent="space-between" mt={12}>
-        <AnimatedText text={animatedText} />
-        <Span children={convertSecToTime(maxValue)} />
-      </Row>
+      {isShowText && (
+        <Row justifyContent="space-between" mt={12}>
+          <AnimatedText text={animatedText} />
+          <Span children={convertSecToTime(maxValue)} />
+        </Row>
+      )}
     </Box>
   )
 }
