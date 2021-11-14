@@ -32,7 +32,6 @@ export const PressableMenu = ({
         borderBottomWidth={0.5}
         borderColor={colors.border}
         borderTopWidth={0.5}
-        flex={1}
         justifyContent="space-between"
         p={11}
         pl={20}

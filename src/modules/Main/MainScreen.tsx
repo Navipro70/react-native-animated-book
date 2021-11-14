@@ -6,9 +6,10 @@ import { HomeRoutes } from '~/constants'
 import { colors } from '~/theme'
 import { HomeNavigationProps } from '~/types'
 
-export const MainScreen = ({ navigation }: HomeNavigationProps<HomeRoutes.Main>) => {
-  const onPressReanimatedAnimations = () => navigation.navigate(HomeRoutes.ReanimatedAnimations)
-  const onPressAnimatedNavigation = () => navigation.navigate(HomeRoutes.AnimatedNavigation)
+export const MainScreen = ({ navigation: { navigate } }: HomeNavigationProps<HomeRoutes.Main>) => {
+  const onPressReanimatedAnimations = () => navigate(HomeRoutes.ReanimatedAnimations)
+  const onPressAnimatedNavigation = () => navigate(HomeRoutes.AnimatedNavigation)
+  const onPressAnimatedLayout = () => navigate(HomeRoutes.AnimatedLayout)
 
   return (
     <ScrollBox
@@ -16,8 +17,9 @@ export const MainScreen = ({ navigation }: HomeNavigationProps<HomeRoutes.Main>)
       contentContainerStyle={styles.container}
       showsVerticalScrollIndicator={false}
     >
-      <PressableMenu title="Reanimated animations" onPress={onPressReanimatedAnimations} />
-      <PressableMenu title="Animated navigation" onPress={onPressAnimatedNavigation} />
+      <PressableMenu title="Reanimated Animations" onPress={onPressReanimatedAnimations} />
+      <PressableMenu title="Animated Navigation" onPress={onPressAnimatedNavigation} />
+      <PressableMenu title="Animated Layout" onPress={onPressAnimatedLayout} />
     </ScrollBox>
   )
 }
