@@ -15,9 +15,3 @@
 ✅  React native update
 
 ✅  Code refactoring
-
-⬜️  Shared elements, also navigation shared elements animations.
-
-⬜️  FlatList and ScrollView animations
-
-⬜️  Обновить readme.md файл где будут показаны некоторые анимации
