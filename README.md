@@ -1,25 +1,23 @@
 ## Features:
 
-✅  Подключить hermes для android, IOS
+✅  Hermes setup
 
-✅  AppIcons
+✅  Icons
 
 ✅  Animated splash screen
 
-⬜️  Переделать дизайн приложения на нормальный)
+✅  Refactroing design
 
-⬜️  Добавить темизацию (в тч. SplashScreen)
+✅  Animations for react navigation
 
-⬜️  Доделать анимации по навигации (в тч включить простые анимации из самой библиотеки из TransitionPresets, TransitionPresets.ModalPresentationIOS, TransitionPresets.FadeFromBottomAndroid etc.)
+✅  Layout animations (reanimated v2.3.alpha)
 
-⬜️  SharedElements animations.
+✅  React native update
 
-⬜️  Layout animations (reanimated v2.3.alpha)
+✅  Code refactoring
+
+⬜️  Shared elements, also navigation shared elements animations.
 
 ⬜️  FlatList and ScrollView animations
 
-⬜️  CI/CD
-
-⬜️  Проверить весь код, отрефачить готовые блоки, проверить все анимации на android/IOS.
-
-⬜️  Обновить readme.md файл где будет рассказано о том что этот проект создан для изучения react-native-reanimated библиотеки, анимаций по навигации и прикрепить gif's с примерами анимаций.
+⬜️  Обновить readme.md файл где будут показаны некоторые анимации
