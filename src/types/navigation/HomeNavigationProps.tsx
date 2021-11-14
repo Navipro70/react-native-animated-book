@@ -6,6 +6,7 @@ import { HomeRoutes } from '~/constants'
 interface HomeScreensParams extends Record<string, object | undefined> {
   [HomeRoutes.Main]: undefined
   [HomeRoutes.ReanimatedAnimations]: undefined
+  [HomeRoutes.AnimatedLayout]: undefined
 }
 
 export interface HomeNavigationProps<Route extends HomeRoutes> {

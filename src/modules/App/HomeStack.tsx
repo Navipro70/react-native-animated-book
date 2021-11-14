@@ -3,25 +3,24 @@ import React from 'react'
 
 import { HomeRoutes } from '~/constants'
 
+import { AnimatedLayoutStack } from '../AnimatedLayout/AnimatedLayoutStack'
 import { AnimatedNavigationStack } from '../AnimatedNavigation'
 import { MainScreen } from '../Main'
 import { ReanimatedAnimationsStack } from '../ReanimatedAnimations'
 
-const Stack = createStackNavigator()
+const { Navigator, Screen } = createStackNavigator()
 
 export const HomeStack = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen
+    <Navigator screenOptions={{ headerShown: false }}>
+      <Screen
         component={MainScreen}
         name={HomeRoutes.Main}
-        options={{
-          headerShown: true,
-          title: 'Animation types',
-        }}
+        options={{ headerShown: true, title: 'Animation types' }}
       />
-      <Stack.Screen component={ReanimatedAnimationsStack} name={HomeRoutes.ReanimatedAnimations} />
-      <Stack.Screen component={AnimatedNavigationStack} name={HomeRoutes.AnimatedNavigation} />
-    </Stack.Navigator>
+      <Screen component={ReanimatedAnimationsStack} name={HomeRoutes.ReanimatedAnimations} />
+      <Screen component={AnimatedNavigationStack} name={HomeRoutes.AnimatedNavigation} />
+      <Screen component={AnimatedLayoutStack} name={HomeRoutes.AnimatedLayout} />
+    </Navigator>
   )
 }

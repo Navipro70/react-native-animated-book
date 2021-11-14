@@ -13,15 +13,16 @@
     "ts:check:ci": "tsc",
     "android:clean": "cd android && ./gradlew clean && cd ..",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "test": "jest"
+    "test": "jest",
+    "clean": "rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-* && rm -rf node_modules/ && yarn cache clean --force && yarn install && yarn start --reset-cache"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.5",
     "lodash": "^4.17.21",
-    "react": "17.0.1",
-    "react-native": "0.64.1",
+    "react": "17.0.2",
+    "react-native": "0.66.3",
     "react-native-bootsplash": "^3.2.5",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-reanimated": "^2.3.0-beta.3",
