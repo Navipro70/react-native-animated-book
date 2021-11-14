@@ -78,7 +78,7 @@ export const Card = ({
   if (!isPrev && !isActive) return null
 
   return (
-    <PanGestureHandler minDist={0} onGestureEvent={panGesture}>
+    <PanGestureHandler enabled={isActive} minDist={0} onGestureEvent={panGesture}>
       <Animated.View
         style={[styles.container, animOpacityStyle, animatedStyle, !isActive && styles.notSelected]}
       >
