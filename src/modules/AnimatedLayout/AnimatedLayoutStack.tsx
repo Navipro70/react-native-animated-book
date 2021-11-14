@@ -18,7 +18,7 @@ export const AnimatedLayoutStack = () => (
     <Screen
       component={EnteringAnimationsScreen}
       name={AnimatedLayoutRoutes.EnteringAnimations}
-      options={{ title: 'Entering animations' }}
+      options={{ title: 'Default layout animations' }}
     />
   </Navigator>
 )

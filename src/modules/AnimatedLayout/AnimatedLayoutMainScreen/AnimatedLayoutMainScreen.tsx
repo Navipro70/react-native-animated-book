@@ -14,7 +14,7 @@ export const AnimatedLayoutMainScreen = ({ navigation: { navigate } }) => {
       contentContainerStyle={styles.container}
       showsVerticalScrollIndicator={false}
     >
-      <PressableMenu title="Entering Animations" onPress={onPressEnteringAnim} />
+      <PressableMenu title="Default layout animations" onPress={onPressEnteringAnim} />
     </ScrollBox>
   )
 }
