@@ -1,20 +1,13 @@
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
 import React from 'react'
 
+import { ScreenView } from '~/components'
 import { AnimatedNavigationRoutes } from '~/constants'
 
 import { AnimatedNavigationMainScreen } from './AnimatedNavigationMainScreen'
-import { BottomFadeAndroidScreen } from './BottomFadeAndroidScreen'
-import { BottomModalIOSScreen } from './BottomModalIOSScreen'
-import { BottomRevealAndroidScreen } from './BottomRevealAndroidScreen'
-import { CenterScaleAndroidScreen } from './CenterScaleAndroidScreen'
-import { CustomModalTransitionScreen } from './CustomModalTransitionScreen'
-import { CustomOpacityTransitionScreen } from './CustomOpacityTransitionScreen'
-import { CustomRotateTransitionScreen } from './CustomRotateTransitionScreen'
-import { DefaultModalTransitionScreen } from './DefaultModalTransitionScreen'
-import { DefaultTransitionScreen } from './DefaultTransitionScreen'
-import { PresentationModalIOSScreen } from './PresentationModalIOSScreen'
-import { RightSlideIOSScreen } from './RightSlideIOSScreen'
+import { CustomTransitions } from './CustomTransitions'
+
+const Screen = () => <ScreenView />
 
 const Stack = createStackNavigator()
 
@@ -27,7 +20,7 @@ export const AnimatedNavigationStack = () => {
         options={{ title: 'Animated navigation' }}
       />
       <Stack.Screen
-        component={RightSlideIOSScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.RightSlideIOS}
         options={{
           title: 'Right slide IOS',
@@ -35,7 +28,7 @@ export const AnimatedNavigationStack = () => {
         }}
       />
       <Stack.Screen
-        component={BottomModalIOSScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.BottomModalIOS}
         options={{
           title: 'Bottom modal IOS',
@@ -43,7 +36,7 @@ export const AnimatedNavigationStack = () => {
         }}
       />
       <Stack.Screen
-        component={PresentationModalIOSScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.PresentationModalIOS}
         options={{
           title: 'Presentational modal IOS',
@@ -51,7 +44,7 @@ export const AnimatedNavigationStack = () => {
         }}
       />
       <Stack.Screen
-        component={BottomFadeAndroidScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.BottomFadeAndroid}
         options={{
           title: 'Bottom fade Android',
@@ -59,7 +52,7 @@ export const AnimatedNavigationStack = () => {
         }}
       />
       <Stack.Screen
-        component={BottomRevealAndroidScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.BottomRevealAndroid}
         options={{
           title: 'Bottom reveal Android',
@@ -67,7 +60,7 @@ export const AnimatedNavigationStack = () => {
         }}
       />
       <Stack.Screen
-        component={CenterScaleAndroidScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.CenterScaleAndroid}
         options={{
           title: 'Center scale Android',
@@ -75,7 +68,7 @@ export const AnimatedNavigationStack = () => {
         }}
       />
       <Stack.Screen
-        component={DefaultTransitionScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.DefaultTransition}
         options={{
           title: 'Default transition',
@@ -83,7 +76,7 @@ export const AnimatedNavigationStack = () => {
         }}
       />
       <Stack.Screen
-        component={DefaultModalTransitionScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.DefaultModalTransition}
         options={{
           title: 'Default modal transition',
@@ -94,25 +87,52 @@ export const AnimatedNavigationStack = () => {
        * TODO make flip and other https://github.com/plmok61/react-navigation-transitions
        */}
       <Stack.Screen
-        component={CustomRotateTransitionScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.CustomRotateTransition}
         options={{
           title: 'Custom rotate transition',
-          //https://callstack.com/blog/custom-screen-transitions-in-react-navigation/
+          ...CustomTransitions.RotateAcross,
         }}
       />
       <Stack.Screen
-        component={CustomOpacityTransitionScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.CustomOpacityTransition}
         options={{
           title: 'Custom opacity transition',
+          ...CustomTransitions.Opacity,
         }}
       />
       <Stack.Screen
-        component={CustomModalTransitionScreen}
+        component={Screen}
         name={AnimatedNavigationRoutes.CustomModalTransition}
         options={{
           title: 'Custom modal transition',
+          ...CustomTransitions.Modal,
+        }}
+      />
+
+      <Stack.Screen
+        component={Screen}
+        name={AnimatedNavigationRoutes.CustomLeftSlide}
+        options={{
+          title: 'Custom left slide',
+          ...CustomTransitions.SlideLeft,
+        }}
+      />
+      <Stack.Screen
+        component={Screen}
+        name={AnimatedNavigationRoutes.CustomFlipX}
+        options={{
+          title: 'Custom flip x transition',
+          ...CustomTransitions.FlipX,
+        }}
+      />
+      <Stack.Screen
+        component={Screen}
+        name={AnimatedNavigationRoutes.CustomFlipY}
+        options={{
+          title: 'Custom flip y transition',
+          ...CustomTransitions.FlipY,
         }}
       />
     </Stack.Navigator>

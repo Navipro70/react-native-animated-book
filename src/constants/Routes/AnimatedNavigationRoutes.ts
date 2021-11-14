@@ -11,4 +11,7 @@ export enum AnimatedNavigationRoutes {
   CustomRotateTransition = 'CustomRotateTransition',
   CustomOpacityTransition = 'CustomOpacityTransition',
   CustomModalTransition = 'CustomModalTransition',
+  CustomLeftSlide = 'CustomLeftSlide',
+  CustomFlipX = 'CustomFlipX',
+  CustomFlipY = 'CustomFlipY',
 }

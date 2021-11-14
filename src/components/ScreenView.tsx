@@ -1,3 +1,4 @@
+import { useHeaderHeight } from '@react-navigation/stack'
 import React from 'react'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
@@ -7,9 +8,11 @@ import { colors } from '~/theme'
 import { Flex, Span } from './primitives'
 
 export const ScreenView = () => {
+  const headerHeight = useHeaderHeight()
   const { bottom } = useSafeAreaInsets()
+
   return (
-    <Flex center bg={colors.white} pb={bottom + 40}>
+    <Flex center bg={colors.white} pb={bottom + headerHeight}>
       <Icons.Telegram />
       <Span children="Hello from screen view" my={16} textAlign="center" type="bold22" />
       <Span

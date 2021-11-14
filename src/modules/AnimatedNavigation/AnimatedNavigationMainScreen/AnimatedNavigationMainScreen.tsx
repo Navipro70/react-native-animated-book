@@ -18,6 +18,10 @@ export const AnimatedNavigationMainScreen = ({ navigation: { navigate } }) => {
   const onCustomModalTransition = () => navigate(AnimatedNavigationRoutes.CustomModalTransition)
   const onCustomRotateTransition = () => navigate(AnimatedNavigationRoutes.CustomRotateTransition)
 
+  const onCustomLeftSlide = () => navigate(AnimatedNavigationRoutes.CustomLeftSlide)
+  const onCustomFlipX = () => navigate(AnimatedNavigationRoutes.CustomFlipX)
+  const onCustomFlipY = () => navigate(AnimatedNavigationRoutes.CustomFlipY)
+
   return (
     <ScrollBox
       bg={colors.bgPrimary}
@@ -35,6 +39,9 @@ export const AnimatedNavigationMainScreen = ({ navigation: { navigate } }) => {
       <PressableMenu title="Custom rotate transition" onPress={onCustomRotateTransition} />
       <PressableMenu title="Custom opacity transition" onPress={onCustomOpacityTransition} />
       <PressableMenu title="Custom modal transition" onPress={onCustomModalTransition} />
+      <PressableMenu title="Custom left slide" onPress={onCustomLeftSlide} />
+      <PressableMenu title="Custom flip x" onPress={onCustomFlipX} />
+      <PressableMenu title="Custom flip y" onPress={onCustomFlipY} />
     </ScrollBox>
   )
 }
